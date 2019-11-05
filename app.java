@@ -32,14 +32,16 @@ public class app {
         }
         return map;
     }
-    public static ArrayList<Integer> findRightFactorSet(ArrayList<Integer> keys,ArrayList<Integer> values,int bVal, int Cval) {
+
+    public static ArrayList<Integer> findRightFactorSet(ArrayList<Integer> keys, ArrayList<Integer> values, int bVal,
+            int Cval) {
         ArrayList<Integer> awns = new ArrayList<Integer>();
         int length = 0;
         for (int var : keys) {
             length++;
         }
         int numOfPairs = length / 2;
-        for (int i = 0; i<=numOfPairs; i++) {
+        for (int i = 0; i <= numOfPairs; i++) {
             if ((keys.get(i) + values.get(i) == bVal) && (keys.get(i) * values.get(i) == Cval)) {
                 awns.add(keys.get(i));
                 awns.add(values.get(i));
@@ -47,6 +49,7 @@ public class app {
         }
         return awns;
     }
+
     public static void main(String[] args) {
         ArrayList<Integer> list = findFactors(14);
         HashMap<Integer, Integer> map = assembleTable(list);
