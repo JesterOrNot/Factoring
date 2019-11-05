@@ -39,7 +39,7 @@ public class app {
             length++;
         }
         int numOfPairs = length / 2;
-        for (int i = 0; i<numOfPairs; i++) {
+        for (int i = 0; i<=numOfPairs; i++) {
             if ((keys.get(i) + values.get(i) == bVal) && (keys.get(i) * values.get(i) == Cval)) {
                 awns.add(keys.get(i));
                 awns.add(values.get(i));
@@ -48,7 +48,7 @@ public class app {
         return awns;
     }
     public static void main(String[] args) {
-        ArrayList<Integer> list = findFactors(6);
+        ArrayList<Integer> list = findFactors(14);
         HashMap<Integer, Integer> map = assembleTable(list);
         ArrayList<Integer> keys = new ArrayList<Integer>();
         ArrayList<Integer> values = new ArrayList<Integer>();
@@ -58,7 +58,7 @@ public class app {
         for (int i : map.values()) {
             values.add(i);
         }
-        System.out.println(findRightFactorSet(keys, values, 7, 6));
+        System.out.println(findRightFactorSet(keys, values, 9, 14));
         System.out.println(keys + "\n" + values);
     }
 }
