@@ -33,16 +33,16 @@ public class app {
         return map;
     }
 
-    public static ArrayList<Integer> findRightFactorSet(ArrayList<Integer> keys, ArrayList<Integer> values, int aVal, int bVal,
-            int cVal) {
+    public static ArrayList<Integer> findRightFactorSet(ArrayList<Integer> keys, ArrayList<Integer> values, int aVal,
+            int bVal, int cVal) {
         ArrayList<Integer> awns = new ArrayList<Integer>();
         // int length = 0;
         // for (int var : keys) {
-        //     length++;
+        // length++;
         // }
         // int numOfPairs = length / 2;
-        if (aVal==1) {
-            for (int i = 0; i <= keys.size()-1; i++) {
+        if (aVal == 1) {
+            for (int i = 0; i <= keys.size() - 1; i++) {
                 if ((keys.get(i) + values.get(i) == bVal) && (keys.get(i) * values.get(i) == cVal)) {
                     awns.add(keys.get(i));
                     awns.add(values.get(i));
