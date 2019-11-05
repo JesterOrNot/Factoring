@@ -22,11 +22,11 @@ public class app {
         }
         int numOfPairs = length / 2;
         for(int i = 1; i<=numOfPairs; i++) {
-            int item1 = list.get(length - 1);
+            int item1 = list.get(list.size() - 1);
             int item2 = list.get(0);
             map.put(item1,item2);
             list.remove(0);
-            list.remove(length-1);
+            list.remove(length-2);
             length-=2;
         }
         return map;
