@@ -6,7 +6,7 @@ import java.util.HashMap;
  */
 public class app {
     static ArrayList<Integer> findFactors(int num) {
-        ArrayList list = new ArrayList<Integer>();
+        ArrayList<Integer> list = new ArrayList<Integer>();
         for (int i = num; i>=1; i--) {
             if (num % i == 0) {
                 list.add(i);
@@ -14,10 +14,10 @@ public class app {
         }
         return list;
     }
-    static HashMap assembleTable(ArrayList<Integer> list) {
-        HashMap map = new HashMap<>();
+    static HashMap<Integer,Integer> assembleTable(ArrayList<Integer> list) {
+        HashMap<Integer,Integer> map = new HashMap<Integer,Integer>();
         int length = 0;
-        for (Object var : list) {
+        for (int var : list) {
             length++;
         }
         int numOfPairs = length / 2;
@@ -26,15 +26,17 @@ public class app {
             int item2 = list.get(0);
             map.put(item1,item2);
             list.remove(0);
-            list.remove(length - 1);
+            list.remove(length-1);
             length-=2;
         }
         return map;
     }
+
     public static void main(String[] args) {
-        ArrayList list = findFactors(66);
-        for (Object var : list) {
-            System.out.print(var + " ");
+        ArrayList<Integer> list = findFactors(66);
+        HashMap<Integer,Integer> map = assembleTable(list);
+        for (Object i : map.values()) {
+            System.out.print(i + " ");
         }
         System.out.println("");
     }
