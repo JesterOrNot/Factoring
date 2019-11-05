@@ -39,17 +39,35 @@ public class app {
         HashMap<Integer, Integer> map = assembleTable(factors);
         ArrayList<Integer> keys = new ArrayList<Integer>();
         ArrayList<Integer> values = new ArrayList<Integer>();
+        int targetProduct = aVal * cVal;
+        ArrayList<Integer> factors2 = findFactors(targetProduct);
+        HashMap<Integer, Integer> map2 = assembleTable(factors2);
+        ArrayList<Integer> keys2 = new ArrayList<Integer>();
+        ArrayList<Integer> values2 = new ArrayList<Integer>();
         for (int i : map.keySet()) {
             keys.add(i);
         }
         for (int i : map.values()) {
             values.add(i);
         }
+        for (int i : map2.keySet()) {
+            keys2.add(i);
+        }
+        for (int i : map2.values()) {
+            values2.add(i);
+        }
         if (aVal == 1) {
             for (int i = 0; i <= keys.size() - 1; i++) {
                 if ((keys.get(i) + values.get(i) == bVal) && (keys.get(i) * values.get(i) == cVal)) {
                     awns.add(keys.get(i));
                     awns.add(values.get(i));
+                }
+            }
+        } else if (aVal > 1) {
+            for (int i = 0; i<=keys2.size() - 1; i++) {
+                if ((keys2.get(i) + values2.get(i) == bVal) && (keys2.get(i) * values2.get(i) == targetProduct)) {
+                    awns.add(keys2.get(i));
+                    awns.add(values2.get(i));
                 }
             }
         }
@@ -59,5 +77,7 @@ public class app {
     public static void main(String[] args) {
         System.out.println(findRightFactorSet(1, 15, 56));
         System.out.println(findRightFactorSet(1, 9, 14));
+        System.out.println(findRightFactorSet(2, 7, 3));
+        System.out.println(findRightFactorSet(3, 10, 8));
     }
 }
