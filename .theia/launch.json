@@ -1,0 +1,21 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  "version": "0.2.0",
+  "configurations": [
+   {
+      "type": "java",
+      "name": "CodeLens (Launch) - app",
+      "request": "launch",
+      "mainClass": "app",
+      "projectName": "Factoring_d7c41e8a",
+      "console": "internalConsole"
+   },
+   {
+      "type": "java",
+      "name": "Debug (Launch) - Current File",
+      "request": "launch",
+      "mainClass": "${file}"
+   }
+]
+}

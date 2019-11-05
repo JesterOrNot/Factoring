@@ -34,14 +34,16 @@ public class app {
     }
 
     public static void main(String[] args) {
-        ArrayList<Integer> list = findFactors(66);
+        ArrayList<Integer> list = findFactors(4543);
         HashMap<Integer, Integer> map = assembleTable(list);
-        for (Object i : map.values()) {
-            System.out.print(i + " ");
-        }
+        ArrayList<Integer> keys = new ArrayList<Integer>();
+        ArrayList<Integer> values = new ArrayList<Integer>();
         System.out.println();
-        for (Object i : map.keySet()) {
-            System.out.print(i + " ");
+        for (int i : map.keySet()) {
+            keys.add(i);
+        }
+        for (int i : map.values()) {
+            values.add(i);
         }
         System.out.println("");
     }
