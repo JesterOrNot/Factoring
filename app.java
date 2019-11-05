@@ -32,19 +32,27 @@ public class app {
         }
         return map;
     }
-
+    public static int[] findRightFactorSet(ArrayList<Integer> keys,ArrayList<Integer> values,int bVal, int Cval) {
+        int length = 0;
+        int[] bsArray = {0,0};
+        for (int var : keys) {
+            length++;
+        }
+        int numOfPairs = length / 2;
+        for (int i = 0; i<numOfPairs; i++) {
+            if ((keys.get(i) + values.get(i) == bVal) && (keys.get(i) * values.get(i) == Cval)) {
+                bsArray[0] = keys.get(i);
+                bsArray[1] = values.get(i);
+            }
+        }
+        return bsArray;
+    }
     public static void main(String[] args) {
-        ArrayList<Integer> list = findFactors(4543);
+        ArrayList<Integer> list = findFactors(-70);
         HashMap<Integer, Integer> map = assembleTable(list);
         ArrayList<Integer> keys = new ArrayList<Integer>();
         ArrayList<Integer> values = new ArrayList<Integer>();
-        for (int i : map.keySet()) {
-            keys.add(i);
-        }
-        for (int i : map.values()) {
-            values.add(i);
-        }
-        System.out.println(keys);
-        System.out.println(values);
+        int[] myArray = findRightFactorSet(keys, values, -3, -70);
+        System.out.println("Factor 1 is " + myArray[0] + " and " + myArray[1]);
     }
 }
