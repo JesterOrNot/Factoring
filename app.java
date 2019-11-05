@@ -64,7 +64,7 @@ public class app {
                 }
             }
         } else if (aVal > 1) {
-            for (int i = 0; i<=keys2.size() - 1; i++) {
+            for (int i = 0; i <= keys2.size() - 1; i++) {
                 if ((keys2.get(i) + values2.get(i) == bVal) && (keys2.get(i) * values2.get(i) == targetProduct)) {
                     awns.add(keys2.get(i));
                     awns.add(values2.get(i));
