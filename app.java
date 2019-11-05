@@ -34,18 +34,18 @@ public class app {
     }
 
     public static ArrayList<Integer> findRightFactorSet(ArrayList<Integer> keys, ArrayList<Integer> values, int aVal, int bVal,
-            int Cval) {
+            int cVal) {
         ArrayList<Integer> awns = new ArrayList<Integer>();
-        int length = 0;
-        for (int var : keys) {
-            length++;
-        }
-        int numOfPairs = length / 2;
+        // int length = 0;
+        // for (int var : keys) {
+        //     length++;
+        // }
+        // int numOfPairs = length / 2;
         if (aVal==1) {
-            for (int i = 0; i <= numOfPairs; i++) {
-                if ((keys.get(i) + values.get(i) == bVal) && (keys.get(i) * values.get(i) == Cval)) {
-                    awns.add(values.get(i));
+            for (int i = 0; i <= keys.size()-1; i++) {
+                if ((keys.get(i) + values.get(i) == bVal) && (keys.get(i) * values.get(i) == cVal)) {
                     awns.add(keys.get(i));
+                    awns.add(values.get(i));
                 }
             }
         }
@@ -53,8 +53,10 @@ public class app {
     }
 
     public static void main(String[] args) {
-        ArrayList<Integer> list = findFactors(14);
+        ArrayList<Integer> list = findFactors(56);
         HashMap<Integer, Integer> map = assembleTable(list);
+        ArrayList<Integer> list2 = findFactors(14);
+        HashMap<Integer, Integer> map2 = assembleTable(list2);
         ArrayList<Integer> keys = new ArrayList<Integer>();
         ArrayList<Integer> values = new ArrayList<Integer>();
         for (int i : map.keySet()) {
@@ -63,6 +65,14 @@ public class app {
         for (int i : map.values()) {
             values.add(i);
         }
+        for (int i : map2.keySet()) {
+            keys.add(i);
+        }
+        for (int i : map2.values()) {
+            values.add(i);
+        }
+        System.out.println(findRightFactorSet(keys, values, 1, 15, 56));
         System.out.println(findRightFactorSet(keys, values, 1, 9, 14));
+        System.out.println(values + "\n" + keys);
     }
 }
