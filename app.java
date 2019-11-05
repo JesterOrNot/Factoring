@@ -39,7 +39,7 @@ public class app {
             length++;
         }
         int numOfPairs = length / 2;
-        for (int i = 0; i<numOfPairs; i++) {
+        for (int i = 1; i<=numOfPairs; i++) {
             if ((keys.get(i) + values.get(i) == bVal) && (keys.get(i) * values.get(i) == Cval)) {
                 bsArray[0] = keys.get(i);
                 bsArray[1] = values.get(i);
