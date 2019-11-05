@@ -38,6 +38,10 @@ public class app {
         for (Object i : map.values()) {
             System.out.print(i + " ");
         }
+        System.out.println();
+        for (Object i : map.keySet()) {
+            System.out.print(i + " ");
+        }
         System.out.println("");
     }
 }
