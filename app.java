@@ -44,8 +44,8 @@ public class app {
         if (aVal==1) {
             for (int i = 0; i <= numOfPairs; i++) {
                 if ((keys.get(i) + values.get(i) == bVal) && (keys.get(i) * values.get(i) == Cval)) {
-                    awns.add(keys.get(i));
                     awns.add(values.get(i));
+                    awns.add(keys.get(i));
                 }
             }
         }
@@ -64,6 +64,5 @@ public class app {
             values.add(i);
         }
         System.out.println(findRightFactorSet(keys, values, 1, 9, 14));
-        System.out.println(keys + "\n" + values);
     }
 }
