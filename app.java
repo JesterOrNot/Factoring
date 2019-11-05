@@ -33,7 +33,7 @@ public class app {
         return map;
     }
 
-    public static ArrayList<Integer> findRightFactorSet(ArrayList<Integer> keys, ArrayList<Integer> values, int bVal,
+    public static ArrayList<Integer> findRightFactorSet(ArrayList<Integer> keys, ArrayList<Integer> values, int aVal, int bVal,
             int Cval) {
         ArrayList<Integer> awns = new ArrayList<Integer>();
         int length = 0;
@@ -41,10 +41,12 @@ public class app {
             length++;
         }
         int numOfPairs = length / 2;
-        for (int i = 0; i <= numOfPairs; i++) {
-            if ((keys.get(i) + values.get(i) == bVal) && (keys.get(i) * values.get(i) == Cval)) {
-                awns.add(keys.get(i));
-                awns.add(values.get(i));
+        if (aVal==1) {
+            for (int i = 0; i <= numOfPairs; i++) {
+                if ((keys.get(i) + values.get(i) == bVal) && (keys.get(i) * values.get(i) == Cval)) {
+                    awns.add(keys.get(i));
+                    awns.add(values.get(i));
+                }
             }
         }
         return awns;
@@ -61,7 +63,7 @@ public class app {
         for (int i : map.values()) {
             values.add(i);
         }
-        System.out.println(findRightFactorSet(keys, values, 9, 14));
+        System.out.println(findRightFactorSet(keys, values, 1, 9, 14));
         System.out.println(keys + "\n" + values);
     }
 }
